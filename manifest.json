@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "斗鱼后台播放保活",
+  "version": "0.1.0",
+  "description": "仅在斗鱼直播标签页隐藏且有声播放时，在内存中消费一帧视频，避免后台视频轨道优化引起断流。",
+  "minimum_chrome_version": "120",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.douyu.com/*"
+      ],
+      "js": [
+        "keepalive.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
